@@ -1,0 +1,12 @@
+[0m17:59:40  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f108f5f4cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f108f4ee4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f108f4f7200>]}
+[0m17:59:40  Running with dbt=1.7.6
+[0m17:59:40  running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/airflow/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir /opt/airflow/dbt --project-dir . --log-path /opt/airflow/logs --log-level debug', 'send_anonymous_usage_stats': 'True'}
+[0m17:59:40  Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path ./dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:59:40  Resource report: {"command_name": "run", "command_wall_clock_time": 0.044323258, "process_user_time": 3.587091, "process_kernel_time": 0.229813, "process_mem_max_rss": "121584", "process_in_blocks": "1728", "process_out_blocks": "4256", "command_success": false}
+[0m17:59:40  Command `dbt run` failed at 17:59:40.460178 after 0.05 seconds
+[0m17:59:40  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1093f1b1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f108f5f9460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f108f4ee4e0>]}
+[0m17:59:40  Flushing usage events

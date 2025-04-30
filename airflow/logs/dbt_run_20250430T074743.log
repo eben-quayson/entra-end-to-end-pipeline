@@ -1,0 +1,208 @@
+[0m07:47:51  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ed0b1640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ed3890a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ed468740>]}
+[0m07:47:51  Running with dbt=1.7.6
+[0m07:47:51  running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/airflow/dbt --project-dir . --log-path /opt/airflow/logs --log-level debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m07:47:51  Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ecf14b60>]}
+[0m07:47:51  Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ed374440>]}
+[0m07:47:51  Registered adapter: postgres=1.7.6
+[0m07:47:51  checksum: d62e513342251256fdf8c77c78ccf3e0bf76720e6e4e8384a98b7479399def9a, vars: {}, profile: , target: , version: 1.7.6
+[0m07:47:51  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m07:47:51  Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ecdbafc0>]}
+[0m07:47:52  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ecfad0d0>]}
+[0m07:47:52  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ebf9b350>]}
+[0m07:47:52  Found 1 model, 0 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m07:47:52  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ecfad0d0>]}
+[0m07:47:52  
+[0m07:47:52  Acquiring new postgres connection 'master'
+[0m07:47:52  Acquiring new postgres connection 'list_analytics'
+[0m07:47:52  Using postgres connection "list_analytics"
+[0m07:47:52  On list_analytics: /* {"app": "dbt", "dbt_version": "1.7.6", "profile_name": "my_project", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m07:47:52  Opening a new connection, currently in state init
+[0m07:47:52  SQL status: SELECT 4 in 0.0 seconds
+[0m07:47:52  On list_analytics: Close
+[0m07:47:52  Re-using an available connection from the pool (formerly list_analytics, now list_analytics_public)
+[0m07:47:52  Using postgres connection "list_analytics_public"
+[0m07:47:52  On list_analytics_public: BEGIN
+[0m07:47:52  Opening a new connection, currently in state closed
+[0m07:47:52  SQL status: BEGIN in 0.0 seconds
+[0m07:47:52  Using postgres connection "list_analytics_public"
+[0m07:47:52  On list_analytics_public: /* {"app": "dbt", "dbt_version": "1.7.6", "profile_name": "my_project", "target_name": "dev", "connection_name": "list_analytics_public"} */
+select
+      'analytics' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'analytics' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'analytics' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m07:47:52  SQL status: SELECT 1 in 0.0 seconds
+[0m07:47:52  On list_analytics_public: ROLLBACK
+[0m07:47:52  On list_analytics_public: Close
+[0m07:47:52  Using postgres connection "master"
+[0m07:47:52  On master: BEGIN
+[0m07:47:52  Opening a new connection, currently in state init
+[0m07:47:52  SQL status: BEGIN in 0.0 seconds
+[0m07:47:52  Using postgres connection "master"
+[0m07:47:52  On master: /* {"app": "dbt", "dbt_version": "1.7.6", "profile_name": "my_project", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m07:47:52  SQL status: SELECT 0 in 0.0 seconds
+[0m07:47:52  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ebf98830>]}
+[0m07:47:52  On master: ROLLBACK
+[0m07:47:52  Using postgres connection "master"
+[0m07:47:52  On master: BEGIN
+[0m07:47:52  SQL status: BEGIN in 0.0 seconds
+[0m07:47:52  On master: COMMIT
+[0m07:47:52  Using postgres connection "master"
+[0m07:47:52  On master: COMMIT
+[0m07:47:52  SQL status: COMMIT in 0.0 seconds
+[0m07:47:52  On master: Close
+[0m07:47:52  Concurrency: 1 threads (target='dev')
+[0m07:47:52  
+[0m07:47:52  Began running node model.my_project.trip_summary
+[0m07:47:52  1 of 1 START sql view model public.trip_summary ................................ [RUN]
+[0m07:47:52  Re-using an available connection from the pool (formerly list_analytics_public, now model.my_project.trip_summary)
+[0m07:47:52  Began compiling node model.my_project.trip_summary
+[0m07:47:52  Writing injected SQL for node "model.my_project.trip_summary"
+[0m07:47:52  Timing info for model.my_project.trip_summary (compile): 07:47:52.974384 => 07:47:52.995801
+[0m07:47:52  Began executing node model.my_project.trip_summary
+[0m07:47:53  Writing runtime sql for node "model.my_project.trip_summary"
+[0m07:47:53  Using postgres connection "model.my_project.trip_summary"
+[0m07:47:53  On model.my_project.trip_summary: BEGIN
+[0m07:47:53  Opening a new connection, currently in state closed
+[0m07:47:53  SQL status: BEGIN in 0.0 seconds
+[0m07:47:53  Using postgres connection "model.my_project.trip_summary"
+[0m07:47:53  On model.my_project.trip_summary: /* {"app": "dbt", "dbt_version": "1.7.6", "profile_name": "my_project", "target_name": "dev", "node_id": "model.my_project.trip_summary"} */
+
+  create view "analytics"."public"."trip_summary__dbt_tmp"
+    
+    
+  as (
+    
+SELECT
+    trip_date,
+    COUNT(*) AS trip_count,
+    SUM(fare) AS total_revenue
+FROM trips
+GROUP BY trip_date
+ORDER BY trip_date
+  );
+[0m07:47:53  SQL status: CREATE VIEW in 0.0 seconds
+[0m07:47:53  Using postgres connection "model.my_project.trip_summary"
+[0m07:47:53  On model.my_project.trip_summary: /* {"app": "dbt", "dbt_version": "1.7.6", "profile_name": "my_project", "target_name": "dev", "node_id": "model.my_project.trip_summary"} */
+alter table "analytics"."public"."trip_summary__dbt_tmp" rename to "trip_summary"
+[0m07:47:53  SQL status: ALTER TABLE in 0.0 seconds
+[0m07:47:53  On model.my_project.trip_summary: COMMIT
+[0m07:47:53  Using postgres connection "model.my_project.trip_summary"
+[0m07:47:53  On model.my_project.trip_summary: COMMIT
+[0m07:47:53  SQL status: COMMIT in 0.0 seconds
+[0m07:47:53  Applying DROP to: "analytics"."public"."trip_summary__dbt_backup"
+[0m07:47:53  Using postgres connection "model.my_project.trip_summary"
+[0m07:47:53  On model.my_project.trip_summary: /* {"app": "dbt", "dbt_version": "1.7.6", "profile_name": "my_project", "target_name": "dev", "node_id": "model.my_project.trip_summary"} */
+drop view if exists "analytics"."public"."trip_summary__dbt_backup" cascade
+[0m07:47:53  SQL status: DROP VIEW in 0.0 seconds
+[0m07:47:53  Timing info for model.my_project.trip_summary (execute): 07:47:52.998547 => 07:47:53.214965
+[0m07:47:53  On model.my_project.trip_summary: Close
+[0m07:47:53  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '92695545-a141-474e-980b-5f6c2d202a3d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ebb4dd60>]}
+[0m07:47:53  1 of 1 OK created sql view model public.trip_summary ........................... [[32mCREATE VIEW[0m in 0.25s]
+[0m07:47:53  Finished running node model.my_project.trip_summary
+[0m07:47:53  Using postgres connection "master"
+[0m07:47:53  On master: BEGIN
+[0m07:47:53  Opening a new connection, currently in state closed
+[0m07:47:53  SQL status: BEGIN in 0.0 seconds
+[0m07:47:53  On master: COMMIT
+[0m07:47:53  Using postgres connection "master"
+[0m07:47:53  On master: COMMIT
+[0m07:47:53  SQL status: COMMIT in 0.0 seconds
+[0m07:47:53  On master: Close
+[0m07:47:53  Connection 'master' was properly closed.
+[0m07:47:53  Connection 'model.my_project.trip_summary' was properly closed.
+[0m07:47:53  
+[0m07:47:53  Finished running 1 view model in 0 hours 0 minutes and 0.42 seconds (0.42s).
+[0m07:47:53  Command end result
+[0m07:47:53  
+[0m07:47:53  [32mCompleted successfully[0m
+[0m07:47:53  
+[0m07:47:53  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m07:47:53  Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.0462327, "process_user_time": 5.046646, "process_kernel_time": 0.311025, "process_mem_max_rss": "133408", "process_in_blocks": "20400", "process_out_blocks": "5776"}
+[0m07:47:53  Command `dbt run` succeeded at 07:47:53.273769 after 2.05 seconds
+[0m07:47:53  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16f1c071a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ed389430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f16ebb4c410>]}
+[0m07:47:53  Flushing usage events

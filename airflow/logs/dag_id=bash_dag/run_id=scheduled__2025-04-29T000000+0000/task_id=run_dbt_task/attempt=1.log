@@ -1,0 +1,22 @@
+{"timestamp":"2025-04-29T14:49:50.907334","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-04-29T14:49:50.908446","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/run_dbt_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-04-29T14:49:50.931049","level":"info","event":"Initializing the DAG.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T14:49:50.953946","level":"info","event":"BashOperator for dbt has been created.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T14:49:50.954105","level":"warning","event":"BashOperator.execute cannot be called outside of the Task Runner!","logger":"airflow.task.operators.airflow.providers.standard.operators.bash.BashOperator"}
+{"timestamp":"2025-04-29T14:49:50.954591","level":"info","event":"Tmp dir root location: /tmp","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T14:49:50.955297","level":"info","event":"Running command: ['/usr/bin/bash', '-c', \"bash_command='cd /opt/airflow/dbt/my_project && dbt run'\"]","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T14:49:50.963338","level":"info","event":"Output:","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T14:49:50.968276","level":"info","event":"Command exited with return code 0","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T14:49:50.968780","level":"info","event":"dbt BashOperator execution completed.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T14:49:50.969106","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator"}
+{"timestamp":"2025-04-29T15:27:25.997270","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-04-29T15:27:25.998248","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/run_dbt_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-04-29T15:27:26.026393","level":"info","event":"Initializing the DAG.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T15:27:26.054307","level":"info","event":"BashOperator for dbt has been created.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T15:27:26.054513","level":"warning","event":"BashOperator.execute cannot be called outside of the Task Runner!","logger":"airflow.task.operators.airflow.providers.standard.operators.bash.BashOperator"}
+{"timestamp":"2025-04-29T15:27:26.055026","level":"info","event":"Tmp dir root location: /tmp","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T15:27:26.055756","level":"info","event":"Running command: ['/usr/bin/bash', '-c', \"bash_command='cd /opt/airflow/dbt/my_project && dbt run'\"]","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T15:27:26.066883","level":"info","event":"Output:","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T15:27:26.069470","level":"info","event":"Command exited with return code 0","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T15:27:26.070586","level":"info","event":"dbt BashOperator execution completed.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T15:27:26.070976","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator"}
