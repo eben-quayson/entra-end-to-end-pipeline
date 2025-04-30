@@ -1,0 +1,72 @@
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: airflow
+    restart: always
+    depends_on:
+      - airflow-postgres
+      - analytics-db
+      - dbt
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-postgres:5432/airflow
+      - AIRFLOW__WEBSERVER__SECRET_KEY=mysecretkey
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./dbt:/opt/airflow/dbt
+    ports:
+      - 8080:8080
+    command: standalone
+    networks:
+      - airflow-network
+
+  airflow-postgres:
+    image: postgres:15
+    container_name: airflow-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_metadata:/var/lib/postgresql/data
+    networks:
+      - airflow-network
+
+  analytics-db:
+    image: postgres:15
+    container_name: analytics-db
+    restart: always
+    environment:
+      POSTGRES_USER: analytics
+      POSTGRES_PASSWORD: analytics
+      POSTGRES_DB: analytics
+    volumes:
+      - analytics_data:/var/lib/postgresql/data
+      - ./init_sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+    networks:
+      - airflow-network
+
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.7.6
+    container_name: dbt
+    volumes:
+      - ./dbt:/usr/app
+    working_dir: /usr/app
+    entrypoint: [ "sleep", "infinity" ]
+    networks:
+      - airflow-network
+
+volumes:
+  postgres_metadata:
+  analytics_data:
+
+networks:
+  airflow-network:
+    driver: bridge
