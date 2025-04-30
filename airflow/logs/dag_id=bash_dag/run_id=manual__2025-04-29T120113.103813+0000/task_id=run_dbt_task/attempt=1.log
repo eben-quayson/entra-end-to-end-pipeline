@@ -1,0 +1,11 @@
+{"timestamp":"2025-04-29T12:01:14.834003","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-04-29T12:01:14.834945","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/run_dbt_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-04-29T12:01:14.856008","level":"info","event":"Initializing the DAG.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T12:01:14.866811","level":"info","event":"BashOperator for dbt has been created.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T12:01:14.866975","level":"warning","event":"BashOperator.execute cannot be called outside of the Task Runner!","logger":"airflow.task.operators.airflow.providers.standard.operators.bash.BashOperator"}
+{"timestamp":"2025-04-29T12:01:14.867392","level":"info","event":"Tmp dir root location: /tmp","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T12:01:14.867993","level":"info","event":"Running command: ['/usr/bin/bash', '-c', \"bash_command='cd /opt/airflow/dbt/my_project && dbt run'\"]","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T12:01:14.877123","level":"info","event":"Output:","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T12:01:14.879304","level":"info","event":"Command exited with return code 0","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
+{"timestamp":"2025-04-29T12:01:14.879737","level":"info","event":"dbt BashOperator execution completed.","logger":"unusual_prefix_8a1b1a00aa87b9c295b6332b559cc89dd64a9e0a_run_dbt_dag"}
+{"timestamp":"2025-04-29T12:01:14.879963","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator"}

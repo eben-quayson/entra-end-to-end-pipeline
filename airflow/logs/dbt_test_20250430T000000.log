@@ -1,0 +1,20 @@
+[0m07:47:59  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffacaa81520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffacaa83710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffaccfebec0>]}
+[0m07:47:59  Running with dbt=1.7.6
+[0m07:47:59  running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/logs', 'profiles_dir': '/opt/airflow/dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt test --profiles-dir /opt/airflow/dbt --project-dir . --log-path /opt/airflow/logs --log-level debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m07:47:59  Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e0982672-e998-4431-b685-b664a82ff455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffacaf03bc0>]}
+[0m07:47:59  Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e0982672-e998-4431-b685-b664a82ff455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffacab28980>]}
+[0m07:47:59  Registered adapter: postgres=1.7.6
+[0m07:47:59  checksum: d62e513342251256fdf8c77c78ccf3e0bf76720e6e4e8384a98b7479399def9a, vars: {}, profile: , target: , version: 1.7.6
+[0m07:47:59  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:47:59  Partial parsing enabled, no changes found, skipping parsing
+[0m07:47:59  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e0982672-e998-4431-b685-b664a82ff455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffacac81d00>]}
+[0m07:47:59  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e0982672-e998-4431-b685-b664a82ff455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffac954f980>]}
+[0m07:47:59  Found 1 model, 0 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m07:47:59  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0982672-e998-4431-b685-b664a82ff455', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffaca97a2d0>]}
+[0m07:47:59  
+[0m07:47:59  Nothing to do. Try checking your model configs and model specification args
+[0m07:47:59  Command end result
+[0m07:48:00  Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.6261075, "process_user_time": 3.877222, "process_kernel_time": 0.169878, "process_mem_max_rss": "121380", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:48:00  Command `dbt test` succeeded at 07:48:00.017356 after 0.63 seconds
+[0m07:48:00  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffaccfebec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffac9d5f140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffacac85be0>]}
+[0m07:48:00  Flushing usage events
