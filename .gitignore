@@ -1,4 +1,5 @@
 airflow/dags/__pycache__/
 airflow/dags/logs
 airflow/logs/dag_processor/
-airflow/logs/dag_processor/2025-04-30/dags-folder/run_dbt_dag.py.log
+
+.gitignore
