@@ -1,0 +1,17 @@
+name: 'my_project'
+version: '1.0.0'
+
+profile: my_project  # Ensure this matches the profile name in profiles.yml
+
+model-paths:
+  - models
+
+seed-paths:
+  - seeds
+
+target-path: 
+  - target
+
+clean-targets:
+  - target
+  - dbt_modules
