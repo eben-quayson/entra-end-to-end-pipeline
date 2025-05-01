@@ -53,6 +53,23 @@ services:
     networks:
       - airflow-network
 
+  metabase:
+    image: metabase/metabase:latest
+    restart: always
+    container_name: Metabase
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: analytics
+      MB_DB_PORT: 5432
+      MB_DB_USER: analytics
+      MB_DB_PASS: analytics
+      MB_DB_HOST: analytics-db
+    networks:
+      - airflow-network
+
+
   dbt:
     image: ghcr.io/dbt-labs/dbt-postgres:1.7.6
     container_name: dbt
