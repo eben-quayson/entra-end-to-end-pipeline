@@ -1,0 +1,18 @@
+[0m14:31:59  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c248f2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c4e01280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c2550b00>]}
+[0m14:31:59  Running with dbt=1.7.6
+[0m14:31:59  running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt', 'log_path': '/opt/airflow/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir /opt/airflow/dbt --project-dir . --log-path /opt/airflow/logs --log-level debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:31:59  [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m14:31:59  Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '075fff2f-ffcf-4286-81f9-d68d9876d965', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c229dc40>]}
+[0m14:31:59  Encountered an error:
+Runtime Error
+  at path ['target-path']: ['target'] is not valid under any of the given schemas
+
+Error encountered in ./dbt_project.yml
+[0m14:31:59  Resource report: {"command_name": "run", "command_wall_clock_time": 0.4250709, "process_user_time": 4.042033, "process_kernel_time": 0.291589, "process_mem_max_rss": "122540", "process_in_blocks": "22072", "process_out_blocks": "5752", "command_success": false}
+[0m14:31:59  Command `dbt run` failed at 14:31:59.356984 after 0.43 seconds
+[0m14:31:59  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c6ffb1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c2550b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02c28b4ce0>]}
+[0m14:31:59  Flushing usage events
